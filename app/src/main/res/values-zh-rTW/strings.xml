@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ADB Kit</string>
+    <string name="subtitle">繞過金融 APP 的偵錯偵測</string>
+
+    <!-- Settings card -->
+    <string name="card_title_setting">開機後設定值</string>
+    <string name="option_0">0 — 停用 ADB</string>
+    <string name="option_1">1 — 啟用 ADB（標準）</string>
+    <string name="option_2">2 — 繞過偵測（ADB 仍可用）</string>
+
+    <!-- Status card -->
+    <string name="card_title_status">狀態</string>
+    <string name="label_permission">權限</string>
+    <string name="label_global">Global adb_enabled</string>
+    <string name="label_secure">Secure adb_enabled</string>
+    <string name="label_target">開機目標值</string>
+
+    <!-- Status values -->
+    <string name="perm_granted">已授權</string>
+    <string name="perm_not_granted">未授權</string>
+
+    <!-- Buttons -->
+    <string name="btn_check">檢查</string>
+    <string name="btn_apply_now">立即套用</string>
+
+    <!-- Hint -->
+    <string name="perm_grant_hint">adb shell pm grant dev.e88e89.adbkit\n  android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <!-- Toast -->
+    <string name="applied_toast">已套用設定</string>
+</resources>
