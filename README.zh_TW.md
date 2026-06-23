@@ -4,6 +4,10 @@
 
 一個極簡且極輕量的 Android App (約 61 KB)，用來快速切換 adb_enabled，以繞過金融 APP 的偵錯偵測。
 
+| 應用程式介面 | 快速設定面板 |
+| :---: | :---: |
+| <img src="Screenshot1.png" width="300" alt="應用程式介面" /> | <img src="Screenshot2.png" width="300" alt="快速設定面板" /> |
+
 ## 原理
 
 許多金融與銀行 APP 透過 Settings.Global.ADB_ENABLED == 1 偵測 USB 偵錯模式。將值設為 2，這些簡單的相等檢查就會失敗，APP 認為 ADB 已關閉，但 Android 系統仍將非零值視為啟用。

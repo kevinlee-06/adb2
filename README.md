@@ -4,6 +4,10 @@
 
 A minimal, ultra-lightweight (~61 KB) Android app that easily manages adb_enabled to bypass financial app debug detection.
 
+| App UI | Quick Settings Tile |
+| :---: | :---: |
+| <img src="Screenshot1.png" width="300" alt="App UI" /> | <img src="Screenshot2.png" width="300" alt="Quick Settings Tile" /> |
+
 ## How It Works
 
 Many financial/banking apps check Settings.Global.ADB_ENABLED == 1 to detect USB debugging. By setting the value to 2, these simple equality checks fail — the app thinks ADB is off, while Android still treats any non-zero value as enabled.
