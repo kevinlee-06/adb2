@@ -3,7 +3,6 @@ package dev.e88e89.adbkit
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.provider.Settings
 import android.util.Log
 
 /**
@@ -12,12 +11,11 @@ import android.util.Log
  */
 class BootReceiver : BroadcastReceiver() {
 
-
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED ||
             intent.action == Intent.ACTION_LOCKED_BOOT_COMPLETED
         ) {
-            Log.i("AdbKit", "Boot received, applying setting…")
+            Log.i("AdbKit", "Boot received (${intent.action}), applying setting…")
             AdbSettingsManager.applyAdbSetting(context)
         }
     }
