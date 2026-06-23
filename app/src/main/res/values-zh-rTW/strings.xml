@@ -4,10 +4,16 @@
     <string name="subtitle">繞過金融 APP 的偵錯偵測</string>
 
     <!-- Settings cards -->
-    <string name="card_title_immediate">立即套用 ADB 狀態</string>
+    <string name="card_title_immediate">ADB 狀態</string>
     <string name="option_0">停用 ADB</string>
     <string name="option_1">啟用 ADB</string>
     <string name="option_2">啟用 ADB + 反偵測</string>
+
+    <!-- Language -->
+    <string name="card_title_language">語言 (Language)</string>
+    <string name="lang_system">系統預設</string>
+    <string name="lang_en">English</string>
+    <string name="lang_zh">繁體中文</string>
 
     <!-- Status values -->
     <string name="perm_granted">已授權</string>

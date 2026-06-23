@@ -4,10 +4,16 @@
     <string name="subtitle">Bypass financial app debug detection</string>
 
     <!-- Settings cards -->
-    <string name="card_title_immediate">Immediate ADB State</string>
+    <string name="card_title_immediate">ADB State</string>
     <string name="option_0">Disable ADB</string>
     <string name="option_1">Enable ADB</string>
     <string name="option_2">Enable ADB + Anti-detection</string>
+
+    <!-- Language -->
+    <string name="card_title_language">Language</string>
+    <string name="lang_system">System Default</string>
+    <string name="lang_en">English</string>
+    <string name="lang_zh">繁體中文</string>
 
     <!-- Status values -->
     <string name="perm_granted">Granted</string>
