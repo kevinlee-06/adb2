@@ -19,7 +19,7 @@
     <!-- Status values -->
     <string name="perm_granted">Granted</string>
     <string name="perm_not_granted">Not granted</string>
-    <string name="value_format">%d</string>
+    <string name="value_format" translatable="false">%d</string>
 
     <!-- Buttons -->
     <string name="btn_check">Check</string>
