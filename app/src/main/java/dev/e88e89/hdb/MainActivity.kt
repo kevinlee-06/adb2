@@ -1,4 +1,4 @@
-package dev.e88e89.adbkit
+package dev.e88e89.hdb
 
 import android.os.Bundle
 import android.widget.RadioButton

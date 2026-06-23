@@ -1,4 +1,4 @@
-package dev.e88e89.adbkit
+package dev.e88e89.hdb
 
 import android.Manifest
 import android.content.Context
@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 
 object AdbSettingsManager {
     private const val TAG = "AdbSettingsManager"
-    const val PREFS_NAME = "adbkit_prefs"
+    const val PREFS_NAME = "hdb_prefs"
     const val KEY_ADB_VALUE = "adb_value"
     const val DEFAULT_ADB_VALUE = 2
 

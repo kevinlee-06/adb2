@@ -1,4 +1,4 @@
-# ADB Kit
+# 荷包蛋
 
 [English README](README.md)
 
@@ -8,7 +8,7 @@
 
 許多金融與銀行 APP 透過 Settings.Global.ADB_ENABLED == 1 偵測 USB 偵錯模式。將值設為 2，這些簡單的相等檢查就會失敗，APP 認為 ADB 已關閉，但 Android 系統仍將非零值視為啟用。
 
-ADB Kit 提供最簡單原生的方式來切換此狀態。
+荷包蛋 (HDB) 提供最簡單原生的方式來切換此狀態。
 
 ## 功能
 
@@ -38,7 +38,7 @@ adb install app/build/outputs/apk/release/app-release.apk
 WRITE_SECURE_SETTINGS 無法透過一般安裝取得，必須透過 ADB 授權 (一次性):
 
 ```bash
-adb shell pm grant dev.e88e89.adbkit android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant dev.e88e89.hdb android.permission.WRITE_SECURE_SETTINGS
 ```
 
 

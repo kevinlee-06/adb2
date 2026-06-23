@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.e88e89.adbkit"
+    namespace = "dev.e88e89.hdb"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "dev.e88e89.adbkit"
+        applicationId = "dev.e88e89.hdb"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

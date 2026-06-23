@@ -26,6 +26,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+          cache: 'gradle'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
@@ -54,12 +55,12 @@ jobs:
       - name: Rename Signed APK
         run: |
           mv app/build/outputs/apk/release/app-release.apk \
-             app/build/outputs/apk/release/adbkit-${{ steps.vars.outputs.version }}.apk
+             app/build/outputs/apk/release/hdb-${{ steps.vars.outputs.version }}.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.vars.outputs.version }}
-          name: ADB Kit ${{ steps.vars.outputs.version }}
+          name: HDB ${{ steps.vars.outputs.version }}
           generate_release_notes: true
-          files: app/build/outputs/apk/release/adbkit-${{ steps.vars.outputs.version }}.apk
+          files: app/build/outputs/apk/release/hdb-${{ steps.vars.outputs.version }}.apk

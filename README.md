@@ -1,4 +1,4 @@
-# ADB Kit
+# HDB
 
 [中文版 README](README.zh_TW.md)
 
@@ -8,7 +8,7 @@ A minimal, ultra-lightweight (~61 KB) Android app that easily manages adb_enable
 
 Many financial/banking apps check Settings.Global.ADB_ENABLED == 1 to detect USB debugging. By setting the value to 2, these simple equality checks fail — the app thinks ADB is off, while Android still treats any non-zero value as enabled.
 
-ADB Kit provides a quick and native way to manage this setting.
+HDB provides a quick and native way to manage this setting.
 
 ## Features
 
@@ -38,7 +38,7 @@ adb install app/build/outputs/apk/release/app-release.apk
 WRITE_SECURE_SETTINGS cannot be granted through normal installation. You must grant it via ADB (one-time):
 
 ```bash
-adb shell pm grant dev.e88e89.adbkit android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant dev.e88e89.hdb android.permission.WRITE_SECURE_SETTINGS
 ```
 
 

@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AdbEnabler"
+rootProject.name = "hdb"
 include(":app")
