@@ -1,6 +1,9 @@
 name: Release
 
 on:
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       version:
@@ -27,18 +30,37 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build Release APK
+      - name: Determine Version
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Unsigned Release APK
         run: ./gradlew assembleRelease
 
-      - name: Rename APK
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY_STORE_BASE64 }}
+          alias: ${{ secrets.SIGNING_KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
+      - name: Rename Signed APK
         run: |
-          mv app/build/outputs/apk/release/app-release.apk \
-             app/build/outputs/apk/release/adbkit-${{ inputs.version }}.apk
+          mv ${{steps.sign_app.outputs.signedReleaseFile}} \
+             app/build/outputs/apk/release/adbkit-${{ steps.vars.outputs.version }}.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ inputs.version }}
-          name: ADB Kit ${{ inputs.version }}
+          tag_name: ${{ steps.vars.outputs.version }}
+          name: ADB Kit ${{ steps.vars.outputs.version }}
           generate_release_notes: true
-          files: app/build/outputs/apk/release/adbkit-${{ inputs.version }}.apk
+          files: app/build/outputs/apk/release/adbkit-${{ steps.vars.outputs.version }}.apk
