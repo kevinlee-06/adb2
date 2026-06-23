@@ -24,7 +24,7 @@ open class MainActivity : Activity() {
         radioGroupImmediate.setOnCheckedChangeListener { group, checkedId ->
             if (isUpdatingUI) return@setOnCheckedChangeListener
             val selected = group.findViewById<RadioButton>(checkedId)
-            val value = selected.tag.toString().toInt()
+            val value = selected.tag.toString().toIntOrNull() ?: 2
             AdbSettingsManager.applyAdbValue(this, value)
             AdbSettingsManager.getPrefs(this).edit().putInt(AdbSettingsManager.KEY_ADB_VALUE, value).apply()
             refreshStatus()
@@ -41,7 +41,7 @@ open class MainActivity : Activity() {
 
         // Permission hint
         val hasPermission = AdbSettingsManager.hasPermission(this)
-        cardPermHint.visibility = if (hasPermission) android.view.View.GONE else android.view.View.VISIBLE
+        cardPermHint.visibility = if (hasPermission) View.GONE else View.VISIBLE
 
         // Immediate state
         var globalValue = AdbSettingsManager.getGlobalAdbState(this)
